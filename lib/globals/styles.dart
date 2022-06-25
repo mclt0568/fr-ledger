@@ -16,6 +16,7 @@ const Color accentDarker = Color(0xFF006351);
 const Color grayBackground = Color(0xFFF3F3F3);
 const Color gray = Color(0xFFD9D9D9);
 const Color secondaryAccentBackground = Color(0xFFE8C960);
+const Color white = Color(0xFFFFFFFF);
 
 const Color accentFocus = Color(0xFFE2FFFA);
 
@@ -38,3 +39,4 @@ const Color errorDisabled = Color(0xFFAA898A);
 // Dimensions
 const double appbarPadding = 20;
 const double appbarHeight = 60;
+const double appbarButtonPadding = 2;
