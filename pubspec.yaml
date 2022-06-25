@@ -49,6 +49,37 @@ flutter:
         - asset: assets/fonts/notosanstc/NotoSansTC-Black.otf
           weight: 900
 
+    - family: Noto Sans
+      fonts:
+        - asset: assets/fonts/notosans/NotoSans-Regular.ttf
+        - asset: assets/fonts/notosans/NotoSans-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/notosans/NotoSans-Light.ttf
+          weight: 300
+        - asset: assets/fonts/notosans/NotoSans-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/notosans/NotoSans-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/notosans/NotoSans-Black.ttf
+          weight: 900
+        - asset: assets/fonts/notosans/NotoSans-Italic.ttf
+          style: italic
+        - asset: assets/fonts/notosans/NotoSans-ThinItalic.ttf
+          style: italic
+          weight: 100
+        - asset: assets/fonts/notosans/NotoSans-LightItalic.ttf
+          style: italic
+          weight: 300
+        - asset: assets/fonts/notosans/NotoSans-MediumItalic.ttf
+          style: italic
+          weight: 500
+        - asset: assets/fonts/notosans/NotoSans-BoldItalic.ttf
+          style: italic
+          weight: 700
+        - asset: assets/fonts/notosans/NotoSans-BlackItalic.ttf
+          style: italic
+          weight: 900
+
 
     - family: Victor Mono
       fonts:
