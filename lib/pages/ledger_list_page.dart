@@ -2,22 +2,22 @@ import 'package:flutter/widgets.dart';
 
 import 'package:frledger/globals/internationalization.dart';
 
-class LedgerList extends StatefulWidget {
-  const LedgerList({Key? key}) : super(key: key);
+class LedgerListPage extends StatefulWidget {
+  const LedgerListPage({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
-    return _LedgerListState();
+    return _LedgerListPageState();
   }
 }
 
-class _LedgerListState extends State<LedgerList> {
+class _LedgerListPageState extends State<LedgerListPage> {
   Map text = {};
 
   // I18n Functions
   Future<void> getData() async {
-    var result =
-        await Internationalization.getTranslationObject(context, "ledger_list");
+    var result = await Internationalization.getTranslationObject(
+        context, "ledger_list_page");
     setState(() {
       text = result;
     });

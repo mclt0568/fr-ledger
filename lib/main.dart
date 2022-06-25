@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frledger/pages/ledger_list.dart';
+import 'package:frledger/pages/ledger_list_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         initialRoute: "/",
         routes: {
-          "/": (context) => const LedgerList(),
+          "/": (context) => const LedgerListPage(),
         });
   }
 }

@@ -1,0 +1,19 @@
+
+{
+    "en":{
+        "allledger":"All Ledgers",
+        "frledger":"Frankium's Ledger System v%s"
+    },
+    "zhcn":{
+        "allledger":"所有账本",
+        "frledger":"Frankium的账本记录系统 v%s"
+    },
+    "zhtw":{
+        "allledger":"所有賬本",
+        "frledger":"Frankium的賬本記錄系統 v%s"
+    },
+    "ve":{
+        "allledger":"",
+        "frledger":"%s"
+    }
+}
