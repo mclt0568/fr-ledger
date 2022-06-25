@@ -36,5 +36,5 @@ const Color errorBackground = Color(0xFFFFDBDD);
 const Color errorDisabled = Color(0xFFAA898A);
 
 // Dimensions
-const double appbarPadding = 25;
-const double appbarHeight = 75;
+const double appbarPadding = 20;
+const double appbarHeight = 60;
