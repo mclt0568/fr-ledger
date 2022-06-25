@@ -1,4 +1,4 @@
-package com.example.frledger
+package com.frankium.frledger
 
 import io.flutter.embedding.android.FlutterActivity
 
