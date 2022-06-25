@@ -32,7 +32,7 @@ flutter:
 
   assets:
     - assets/
-    - assets/langs
+    - assets/langs/
   
   fonts:
     - family: Noto Sans TC
