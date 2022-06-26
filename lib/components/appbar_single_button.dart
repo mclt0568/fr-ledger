@@ -2,8 +2,10 @@ import 'package:flutter/widgets.dart';
 import 'package:frledger/globals/styles.dart';
 
 class AppbarSingleButton extends StatefulWidget {
-  const AppbarSingleButton({Key? key, required this.icon}) : super(key: key);
+  const AppbarSingleButton({Key? key, required this.icon, this.dangerous})
+      : super(key: key);
   final IconData icon;
+  final bool? dangerous;
 
   @override
   State<StatefulWidget> createState() {
@@ -40,11 +42,15 @@ class _AppbarSingleButtonState extends State<AppbarSingleButton> {
           child: Padding(
             padding: const EdgeInsets.all(appbarButtonPadding),
             child: Container(
-              color: hover ? accentFocus : white,
+              color: hover
+                  ? ((widget.dangerous ?? false)
+                      ? errorBackground
+                      : accentFocus)
+                  : white,
               child: Icon(
                 widget.icon,
                 size: 23,
-                color: accent,
+                color: (widget.dangerous ?? false) ? error : accent,
               ),
             ),
           )),
