@@ -1,5 +1,4 @@
 import 'package:flutter/widgets.dart';
-import 'package:frledger/globals/styles.dart';
 
 class AppbarContainer extends StatelessWidget {
   const AppbarContainer({Key? key, this.leftButton, this.rightPanel})

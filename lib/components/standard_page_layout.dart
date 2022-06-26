@@ -1,5 +1,4 @@
 import 'package:flutter/widgets.dart';
-import 'package:frledger/components/default_text.dart';
 import 'package:frledger/globals/styles.dart';
 
 class StandardPageLayout extends StatelessWidget {
