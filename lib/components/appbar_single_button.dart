@@ -2,10 +2,12 @@ import 'package:flutter/widgets.dart';
 import 'package:frledger/globals/styles.dart';
 
 class AppbarSingleButton extends StatefulWidget {
-  const AppbarSingleButton({Key? key, required this.icon, this.dangerous})
+  const AppbarSingleButton(
+      {Key? key, required this.icon, this.dangerous, this.onTap})
       : super(key: key);
   final IconData icon;
   final bool? dangerous;
+  final VoidCallback? onTap;
 
   @override
   State<StatefulWidget> createState() {
@@ -27,6 +29,7 @@ class _AppbarSingleButtonState extends State<AppbarSingleButton> {
       onTapUp: (TapUpDetails d) {
         setState(() {
           hover = false;
+          widget.onTap?.call();
         });
       },
       onTapCancel: () {
