@@ -1,19 +1,50 @@
-
 {
     "en":{
-        "allledger":"All Ledgers",
-        "frledger":"Frankium's Ledger System v%s"
+        "allledger": "All Ledgers",
+        "frledger": "Frankium's Ledger System v%s",
+        "appsettings": "Settings",
+        "language": "Languages",
+        "management": "Management",
+        "exportappdata":"Export all data",
+        "about":"About",
+        "aboutapp":"About app",
+        "viewlicenses":"View licenses",
+        "githubrepo":"Github repository"
     },
     "zhcn":{
         "allledger":"所有账本",
-        "frledger":"Frankium的账本记录系统 v%s"
+        "frledger":"Frankium的账本记录系统 v%s",
+        "appsettings":"设置",
+        "language":"语言",
+        "management":"管理",
+        "exportappdata":"导出所有资料",
+        "about":"关于",
+        "aboutapp":"关于此应用程序",
+        "viewlicenses":"查看许可证",
+        "githubrepo":"Github Repo"
     },
     "zhtw":{
         "allledger":"所有賬本",
-        "frledger":"Frankium的賬本記錄系統 v%s"
+        "frledger":"Frankium的賬本記錄系統 v%s",
+        "appsettings":"設定",
+        "language":"語言",
+        "management":"管理",
+        "exportappdata":"匯出所有資料",
+        "about":"關於",
+        "aboutapp":"關於這個程式",
+        "viewlicenses":"查看軟體許可",
+        "githubrepo":"Github Repo"
     },
     "ve":{
         "allledger":"",
-        "frledger":"%s"
+        "frledger":"%s",
+        "appsettings":"",
+        "language":"",
+        "management":"",
+        "exportappdata":"",
+        "about":"",
+        "aboutapp":"",
+        "viewlicenses":"",
+        "githubrepo":""
     }
 }

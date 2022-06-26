@@ -1,4 +1,10 @@
+import 'package:carbon_icons/carbon_icons.dart';
 import 'package:flutter/widgets.dart';
+import 'package:frledger/components/appbar_container.dart';
+import 'package:frledger/components/appbar_multipage_panel.dart';
+import 'package:frledger/components/appbar_single_button.dart';
+import 'package:frledger/components/default_text.dart';
+import 'package:frledger/components/standard_page_layout.dart';
 
 import 'package:frledger/globals/internationalization.dart';
 
@@ -13,6 +19,10 @@ class LedgerListPage extends StatefulWidget {
 
 class _LedgerListPageState extends State<LedgerListPage> {
   Map text = {};
+
+  PageController controller = PageController(
+    initialPage: 2,
+  );
 
   // I18n Functions
   Future<void> getData() async {
@@ -37,6 +47,30 @@ class _LedgerListPageState extends State<LedgerListPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return StandardPageLayout(
+      body: PageView(
+        physics: const BouncingScrollPhysics(),
+        controller: controller,
+        children: const [
+          DefaultText(text: "Page 1"),
+          DefaultText(text: "Page 2"),
+          DefaultText(text: "Page 3"),
+        ],
+      ),
+      appbarOverlay: AppbarContainer(
+        leftButton: const AppbarSingleButton(
+          icon: CarbonIcons.catalog,
+        ),
+        rightPanel: AppbarMultipagePanel(
+          pageController: controller,
+          mainButtonIcon: CarbonIcons.add_alt,
+          pageIcons: const [
+            CarbonIcons.settings,
+            CarbonIcons.roadmap,
+            CarbonIcons.dashboard,
+          ],
+        ),
+      ),
+    );
   }
 }
