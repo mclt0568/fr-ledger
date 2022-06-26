@@ -36,7 +36,10 @@ const Color error = Color(0xFFD12831);
 const Color errorBackground = Color(0xFFFFDBDD);
 const Color errorDisabled = Color(0xFFAA898A);
 
+const Color transparent = Color(0x00000000);
+
 // Dimensions
 const double appbarPadding = 20;
 const double appbarHeight = 60;
-const double appbarButtonPadding = 2;
+const double appbarButtonPadding = 3;
+const double standardIconSize = 23;

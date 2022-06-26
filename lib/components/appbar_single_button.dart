@@ -49,7 +49,7 @@ class _AppbarSingleButtonState extends State<AppbarSingleButton> {
                   : white,
               child: Icon(
                 widget.icon,
-                size: 23,
+                size: standardIconSize,
                 color: (widget.dangerous ?? false) ? error : accent,
               ),
             ),
