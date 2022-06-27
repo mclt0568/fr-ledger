@@ -1,0 +1,32 @@
+{
+    "tables":{
+        "Ledger":[
+            {"name":"l_id","type":"TEXT","primaryKey":true,"modifiers":""},
+            {"name":"l_name","type":"TEXT","primaryKey":false,"modifiers":""},
+            {"name":"l_currency","type":"TEXT","primaryKey":false,"modifiers":""},
+            {"name":"l_timezoneshift","type":"TEXT","primaryKey":false,"modifiers":""},
+            {"name":"l_defaultplannedexp","type":"REAL","primaryKey":false,"modifiers":""}
+        ],
+        "LedgerTag":[
+            {"name":"l_id","type":"TEXT","primaryKey":true,"modifiers":""},
+            {"name":"t_id","type":"TEXT","primaryKey":true,"modifiers":""},
+            {"name":"t_name","type":"TEXT","primaryKey":false,"modifiers":""}
+        ],
+        "Commit":[
+            {"name":"c_id","type":"TEXT","primaryKey":true,"modifiers":""},
+            {"name":"l_id","type":"TEXT","primaryKey":true,"modifiers":""},
+            {"name":"c_type","type":"TEXT","primaryKey":false,"modifiers":""},
+            {"name":"c_source","type":"TEXT","primaryKey":false,"modifiers":""},
+            {"name":"c_amount","type":"REAL","primaryKey":false,"modifiers":""},
+            {"name":"c_datetime","type":"TEXT","primaryKey":false,"modifiers":""},
+            {"name":"c_title","type":"TEXT","primaryKey":false,"modifiers":""},
+            {"name":"c_description","type":"TEXT","primaryKey":false,"modifiers":""},
+            {"name":"c_tag","type":"TEXT","primaryKey":false,"modifiers":""},
+            {"name":"c_editdatetime","type":"TEXT","primaryKey":false,"modifiers":""}
+        ],
+        "CurrencyDict":[
+            {"name":"cd_id","type":"TEXT","primaryKey":true,"modifiers":""},
+            {"name":"cd_symbol","type":"TEXT","primaryKey":false,"modifiers":""}
+        ]
+    }
+}

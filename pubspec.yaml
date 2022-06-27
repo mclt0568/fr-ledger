@@ -16,6 +16,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   shared_preferences: ^2.0.15
   carbon_icons: ^0.0.1
+  sqflite:
+  path:
 
 dev_dependencies:
   flutter_test:
