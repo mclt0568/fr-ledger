@@ -30,6 +30,10 @@ class _LedgerEntryCardState extends State<LedgerEntryCard> {
         (ledgerEntryCardPadding * 2) -
         ledgerEntryCardPrograssHeight;
 
+    double progressWidth = MediaQuery.of(context).size.width -
+        (pagePadding * 2) -
+        (ledgerEntryCardPadding * 2);
+
     return GestureDetector(
         onLongPressDown: (d) {
           setState(() {
@@ -79,11 +83,13 @@ class _LedgerEntryCardState extends State<LedgerEntryCard> {
                         children: [
                           Container(
                             color: accent,
-                            width: 100, // Percentage
+                            width:
+                                widget.expPercent * progressWidth, // Percentage
                           ),
                           Container(
                             color: secondaryAccentBackground,
-                            width: 10, // Percentage
+                            width: widget.planPercent *
+                                progressWidth, // Percentage
                           ),
                           Expanded(child: Container(color: gray))
                         ],
