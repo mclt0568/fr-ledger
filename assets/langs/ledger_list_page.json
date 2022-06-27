@@ -2,6 +2,7 @@
     "en":{
         "allledger": "All Ledgers",
         "frledger": "Frankium's Ledger System v%s",
+        "empty": "There is no ledger yet.",
         "appsettings": "Settings",
         "language": "Languages",
         "management": "Management",
@@ -14,6 +15,7 @@
     "zhcn":{
         "allledger":"所有账本",
         "frledger":"Frankium的账本记录系统 v%s",
+        "empty": "还没有添加任何账本",
         "appsettings":"设置",
         "language":"语言",
         "management":"管理",
@@ -26,6 +28,7 @@
     "zhtw":{
         "allledger":"所有賬本",
         "frledger":"Frankium的賬本記錄系統 v%s",
+        "empty": "還沒有新增任何賬本",
         "appsettings":"設定",
         "language":"語言",
         "management":"管理",
@@ -38,6 +41,7 @@
     "ve":{
         "allledger":"",
         "frledger":"%s",
+        "empty": "",
         "appsettings":"",
         "language":"",
         "management":"",

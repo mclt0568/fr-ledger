@@ -27,7 +27,7 @@ class DefaultText extends StatelessWidget {
             'Noto Sans',
             'Noto Sans TC',
           ],
-          fontSize: size ?? 10,
+          fontSize: size ?? defaultParagraphFontSize,
           color: color ?? paragraphColorDark,
           decoration: TextDecoration.none,
           fontWeight: weight ?? FontWeight.normal),

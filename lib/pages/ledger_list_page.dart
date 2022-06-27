@@ -2,11 +2,14 @@ import 'package:carbon_icons/carbon_icons.dart';
 import 'package:flutter/widgets.dart';
 import 'package:frledger/components/appbar_container.dart';
 import 'package:frledger/components/appbar_multipage_panel.dart';
-import 'package:frledger/components/appbar_single_button.dart';
 import 'package:frledger/components/default_text.dart';
 import 'package:frledger/components/standard_page_layout.dart';
+import 'package:frledger/pages/ledger_list_subpages/all_ledger_settings.dart';
+import 'package:sprintf/sprintf.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
 import 'package:frledger/globals/internationalization.dart';
+import 'package:frledger/pages/ledger_list_subpages/ledger_list.dart';
 
 class LedgerListPage extends StatefulWidget {
   const LedgerListPage({Key? key}) : super(key: key);
@@ -19,9 +22,10 @@ class LedgerListPage extends StatefulWidget {
 
 class _LedgerListPageState extends State<LedgerListPage> {
   Map text = {};
+  String version = "";
 
   PageController controller = PageController(
-    initialPage: 2,
+    initialPage: 1,
   );
 
   // I18n Functions
@@ -30,6 +34,12 @@ class _LedgerListPageState extends State<LedgerListPage> {
         context, "ledger_list_page");
     setState(() {
       text = result;
+    });
+
+    //get version
+    PackageInfo packageInfo = await PackageInfo.fromPlatform();
+    setState(() {
+      version = packageInfo.version;
     });
   }
 
@@ -47,27 +57,30 @@ class _LedgerListPageState extends State<LedgerListPage> {
 
   @override
   Widget build(BuildContext context) {
+    String subheader = sprintf(getText("frledger"), [version]);
+
     return StandardPageLayout(
       body: PageView(
         physics: const BouncingScrollPhysics(),
         controller: controller,
-        children: const [
-          DefaultText(text: "Page 1"),
-          DefaultText(text: "Page 2"),
-          DefaultText(text: "Page 3"),
+        children: [
+          AllLedgerSettings(
+              header: getText("appsettings"), subheader: subheader),
+          LedgerList(
+            header: getText("allledger"),
+            subheader: subheader,
+            emptyPrompt: getText("empty"),
+          ),
         ],
       ),
       appbarOverlay: AppbarContainer(
-        leftButton: const AppbarSingleButton(
-          icon: CarbonIcons.catalog,
-        ),
         rightPanel: AppbarMultipagePanel(
           pageController: controller,
           mainButtonIcon: CarbonIcons.add_alt,
+          onMainButtonTap: () {},
           pageIcons: const [
             CarbonIcons.settings,
-            CarbonIcons.roadmap,
-            CarbonIcons.dashboard,
+            CarbonIcons.catalog,
           ],
         ),
       ),

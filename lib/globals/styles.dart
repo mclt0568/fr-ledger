@@ -42,4 +42,17 @@ const Color transparent = Color(0x00000000);
 const double appbarPadding = 20;
 const double appbarHeight = 60;
 const double appbarButtonPadding = 3;
+
 const double standardIconSize = 23;
+
+const double pagePadding = 25;
+const double headerPadding = 20;
+
+const double ledgerEntryCardHeight = 65;
+const double ledgerEntryCardPadding = 3;
+const double ledgerEntryCardPrograssHeight = 5;
+
+// Font sizes
+const double headerFontSize = 20;
+const double subheaderFontSize = 14;
+const double defaultParagraphFontSize = 14;
