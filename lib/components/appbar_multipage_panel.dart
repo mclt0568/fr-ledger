@@ -23,7 +23,7 @@ class AppbarMultipagePanel extends StatefulWidget {
 }
 
 class _AppbarMultipagePanelState extends State<AppbarMultipagePanel> {
-  double shadowPosition = 2 * (appbarHeight - appbarButtonPadding * 2);
+  double shadowPosition = 0 * (appbarHeight - appbarButtonPadding * 2);
   bool isMainButtonHover = false;
 
   @override
@@ -34,6 +34,11 @@ class _AppbarMultipagePanelState extends State<AppbarMultipagePanel> {
             (appbarHeight - appbarButtonPadding * 2);
       });
     }));
+
+    setState(() {
+      shadowPosition = (widget.pageController.page ?? 2) *
+          (appbarHeight - appbarButtonPadding * 2);
+    });
 
     return Container(
         decoration:
