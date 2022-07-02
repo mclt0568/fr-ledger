@@ -51,6 +51,7 @@ const double headerPadding = 20;
 const double ledgerEntryCardHeight = 65;
 const double ledgerEntryCardPadding = 3;
 const double ledgerEntryCardPrograssHeight = 5;
+const double ledgerEntryCardMarginBottom = 15;
 
 // Font sizes
 const double headerFontSize = 20;
