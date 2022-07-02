@@ -41,13 +41,22 @@ class LedgerList extends StatelessWidget {
                 physics: const BouncingScrollPhysics(),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: const [
-                    // LedgerEntryCard(
-                    //   expPercent: 20,
-                    //   planPercent: 10,
-                    //   label: "Test",
-                    //   ledgerID: "1",
-                    // )
+                  children: [
+                    for (int i = 0; i < 10; i++)
+                      const Padding(
+                        padding: EdgeInsets.only(
+                            bottom: ledgerEntryCardMarginBottom),
+                        child: LedgerEntryCard(
+                          expPercent: 0.5,
+                          planPercent: 0.1,
+                          label: "Test",
+                          ledgerID: "1",
+                        ),
+                      ),
+                    const SizedBox(
+                      height: ledgerEntryCardMarginBottom + appbarHeight,
+                      width: 1,
+                    )
                   ],
                 )),
           )
