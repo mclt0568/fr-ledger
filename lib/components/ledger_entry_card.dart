@@ -22,8 +22,6 @@ class LedgerEntryCard extends StatefulWidget {
 }
 
 class _LedgerEntryCardState extends State<LedgerEntryCard> {
-  bool hover = false;
-
   @override
   Widget build(BuildContext context) {
     double innerItemHeight = ledgerEntryCardHeight -
@@ -35,26 +33,11 @@ class _LedgerEntryCardState extends State<LedgerEntryCard> {
         (ledgerEntryCardPadding * 2);
 
     return GestureDetector(
-        onLongPressDown: (d) {
-          setState(() {
-            hover = true;
-          });
-        },
-        onLongPressUp: () {
-          setState(() {
-            hover = false;
-          });
-        },
-        onLongPressCancel: () {
-          setState(() {
-            hover = false;
-          });
-        },
         onTap: () {},
         child: Container(
-            decoration: BoxDecoration(
-              color: hover ? accentFocus : white,
-              boxShadow: const [slightElevated],
+            decoration: const BoxDecoration(
+              color: white,
+              boxShadow: [slightElevated],
             ),
             height: ledgerEntryCardHeight,
             child: Padding(
