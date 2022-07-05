@@ -1,10 +1,21 @@
+import 'dart:ui';
+
 import 'package:flutter/widgets.dart';
 
+// Effects
 const BoxShadow slightElevated = BoxShadow(
     offset: Offset(0, 1.5),
     blurRadius: 2,
     spreadRadius: 1,
     color: Color(0x88c5c5c5));
+
+const BoxShadow slightElevatedOverOverlay = BoxShadow(
+    offset: Offset(0, 1.5),
+    blurRadius: 10,
+    spreadRadius: 1,
+    color: Color(0x88c5c5c5));
+
+ImageFilter overlayBlurFilter = ImageFilter.blur(sigmaX: 1.5, sigmaY: 1.5);
 
 // Colors
 const Color headerColor = Color(0xFF000000);
@@ -37,6 +48,7 @@ const Color errorBackground = Color(0xFFFFDBDD);
 const Color errorDisabled = Color(0xFFAA898A);
 
 const Color transparent = Color(0x00000000);
+const Color overlayTransparent = Color.fromARGB(100, 151, 151, 151);
 
 // Dimensions
 const double appbarPadding = 20;
@@ -52,6 +64,9 @@ const double ledgerEntryCardHeight = 65;
 const double ledgerEntryCardPadding = 3;
 const double ledgerEntryCardPrograssHeight = 5;
 const double ledgerEntryCardMarginBottom = 15;
+
+const double settingsGroupElementPaddingVertical = 15;
+const double settingsButtonHeight = 55;
 
 // Font sizes
 const double headerFontSize = 20;
