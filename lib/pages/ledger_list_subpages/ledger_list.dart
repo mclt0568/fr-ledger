@@ -42,14 +42,14 @@ class LedgerList extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    for (int i = 0; i < 10; i++)
-                      const Padding(
-                        padding: EdgeInsets.only(
+                    for (int i = 0; i < 2; i++)
+                      Padding(
+                        padding: const EdgeInsets.only(
                             bottom: ledgerEntryCardMarginBottom),
                         child: LedgerEntryCard(
                           expPercent: 0.5,
                           planPercent: 0.1,
-                          label: "Test",
+                          label: "Test $i",
                           ledgerID: "1",
                         ),
                       ),
