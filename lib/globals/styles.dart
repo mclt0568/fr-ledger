@@ -68,6 +68,8 @@ const double ledgerEntryCardMarginBottom = 15;
 const double settingsGroupElementPaddingVertical = 15;
 const double settingsButtonHeight = 55;
 
+const double dropdownListItemHeight = 10;
+
 // Font sizes
 const double headerFontSize = 20;
 const double subheaderFontSize = 14;

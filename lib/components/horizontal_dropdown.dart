@@ -32,8 +32,8 @@ class _HorizontalDropdownState extends State<HorizontalDropdown>
 
   @override
   void initState() {
-    widgetKey = LabeledGlobalKey(widget.control.getTruKeyString());
     dropdownOverlay = createDropdownMenuOverlay();
+    widgetKey = LabeledGlobalKey(widget.control.getTruKeyString());
     overlayFadeController = AnimationController(
         vsync: this,
         duration: Duration(milliseconds: widget.animationMilliseconds));
@@ -86,7 +86,14 @@ class _HorizontalDropdownState extends State<HorizontalDropdown>
                 top: renderY,
                 left: renderX,
                 child: widget.control.dropdownListBuilder(
-                    renderX, renderY, renderWidth, renderHeight),
+                    renderX,
+                    renderY,
+                    renderWidth,
+                    renderHeight,
+                    widget.control,
+                    openDropdown,
+                    closeDropdown,
+                    updateDropdownData),
               ),
             ]));
   }
