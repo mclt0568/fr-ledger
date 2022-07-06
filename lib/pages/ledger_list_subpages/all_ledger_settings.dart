@@ -134,6 +134,30 @@ class _AllLedgerSettingsState extends State<AllLedgerSettings> {
                               }),
                         )
                       ]),
+                      SettingsGroup(
+                        title: getText("management"),
+                        children: [
+                          HorizontalIconButton(
+                              icon: CarbonIcons.save,
+                              text: getText("exportappdata"))
+                        ],
+                      ),
+                      SettingsGroup(
+                        title: getText("about"),
+                        children: [
+                          HorizontalIconButton(
+                              icon: CarbonIcons.information,
+                              text: getText("aboutapp")),
+                          HorizontalIconButton(
+                              icon: CarbonIcons.license,
+                              text: getText("viewlicenses")),
+                          HorizontalIconButton(
+                            icon: CarbonIcons.logo_github,
+                            text: getText("githubrepo"),
+                            rightIcon: CarbonIcons.launch,
+                          ),
+                        ],
+                      ),
                     ],
                   )),
             ),
