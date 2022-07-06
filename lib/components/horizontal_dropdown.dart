@@ -100,17 +100,18 @@ class _HorizontalDropdownState extends State<HorizontalDropdown>
 
   @override
   Widget build(BuildContext context) {
-    return Visibility(
-      visible: !showingDropdownList,
-      child: GestureDetector(
-        onTap: () {
-          openDropdown();
-        },
-        child: Container(
-          key: widgetKey,
-          height: settingsButtonHeight,
-          decoration:
-              const BoxDecoration(color: white, boxShadow: [slightElevated]),
+    return GestureDetector(
+      onTap: () {
+        openDropdown();
+      },
+      child: Container(
+        key: widgetKey,
+        height: settingsButtonHeight,
+        decoration: BoxDecoration(
+            color: showingDropdownList ? transparent : white,
+            boxShadow: const [slightElevated]),
+        child: Visibility(
+          visible: !showingDropdownList,
           child: Row(
             children: [
               SizedBox(
