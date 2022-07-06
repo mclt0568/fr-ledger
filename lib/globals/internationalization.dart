@@ -8,7 +8,7 @@ class Internationalization {
   static var languageNames = <String, String>{
     "en": "English",
     "zhcn": "简体中文",
-    "zhtw": "繁體中文",
+    "zhtw": "正體中文",
     "ve": "Vëlhëlkohas",
   };
   static var fallback = "en";

@@ -2,7 +2,6 @@ import 'package:carbon_icons/carbon_icons.dart';
 import 'package:flutter/widgets.dart';
 import 'package:frledger/components/appbar_container.dart';
 import 'package:frledger/components/appbar_multipage_panel.dart';
-import 'package:frledger/components/default_text.dart';
 import 'package:frledger/components/standard_page_layout.dart';
 import 'package:frledger/pages/ledger_list_subpages/all_ledger_settings.dart';
 import 'package:sprintf/sprintf.dart';
@@ -28,12 +27,16 @@ class _LedgerListPageState extends State<LedgerListPage> {
     initialPage: 1,
   );
 
+  String currentLanguage = "";
+
   // I18n Functions
   Future<void> getData() async {
     var result = await Internationalization.getTranslationObject(
         context, "ledger_list_page");
+    var currentLang = await Internationalization.getLanguage();
     setState(() {
       text = result;
+      currentLanguage = currentLang;
     });
 
     //get version
@@ -64,8 +67,7 @@ class _LedgerListPageState extends State<LedgerListPage> {
         physics: const BouncingScrollPhysics(),
         controller: controller,
         children: [
-          AllLedgerSettings(
-              header: getText("appsettings"), subheader: subheader),
+          const AllLedgerSettings(),
           LedgerList(
             header: getText("allledger"),
             subheader: subheader,
