@@ -13,6 +13,8 @@ import 'package:frledger/globals/styles.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:restart_app/restart_app.dart';
 import 'package:sprintf/sprintf.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AllLedgerSettings extends StatefulWidget {
   const AllLedgerSettings({Key? key}) : super(key: key);
@@ -31,7 +33,6 @@ class _AllLedgerSettingsState extends State<AllLedgerSettings> {
 
   Map text = {};
   String version = "";
-
   String currentLanguage = "";
 
   Future<void> getData() async {
@@ -59,6 +60,17 @@ class _AllLedgerSettingsState extends State<AllLedgerSettings> {
   String getText(String key) {
     if (text == {}) return "";
     return text[key].toString();
+  }
+
+  Future<void> launchGithub() async {
+    String url = dotenv.env['GIT_REPO'] ?? "";
+    if (url.isEmpty) {
+      return;
+    }
+
+    if (await canLaunchUrl(Uri.parse(url))) {
+      await launchUrl(Uri.parse(url), mode: LaunchMode.inAppWebView);
+    }
   }
 
   @override
@@ -155,6 +167,9 @@ class _AllLedgerSettingsState extends State<AllLedgerSettings> {
                             icon: CarbonIcons.logo_github,
                             text: getText("githubrepo"),
                             rightIcon: CarbonIcons.launch,
+                            onTap: () {
+                              launchGithub();
+                            },
                           ),
                         ],
                       ),
