@@ -1,3 +1,4 @@
+import 'package:carbon_icons/carbon_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:frledger/components/default_text.dart';
 import 'package:frledger/controls/dropdown_control.dart';
@@ -58,7 +59,12 @@ class GenericSettingsDropdownList extends StatelessWidget {
                                     display: "", value: ""))
                             .display,
                       ),
-                    )
+                    ),
+                    SizedBox(
+                        width: height,
+                        height: height,
+                        child: const Icon(CarbonIcons.chevron_up,
+                            color: paragraphColorDark, size: standardIconSize)),
                   ],
                 )),
             const Divider(height: 1),
