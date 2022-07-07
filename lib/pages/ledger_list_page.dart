@@ -1,9 +1,11 @@
 import 'package:carbon_icons/carbon_icons.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:frledger/components/appbar_container.dart';
 import 'package:frledger/components/appbar_multipage_panel.dart';
 import 'package:frledger/components/standard_page_layout.dart';
 import 'package:frledger/pages/ledger_list_subpages/all_ledger_settings.dart';
+import 'package:frledger/pages/ledger_list_subpages/debug_subpage.dart';
 import 'package:sprintf/sprintf.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
@@ -22,9 +24,10 @@ class LedgerListPage extends StatefulWidget {
 class _LedgerListPageState extends State<LedgerListPage> {
   Map text = {};
   String version = "";
+  bool debugMode = int.parse(dotenv.env["DEBUG"] ?? "0") == 1;
 
   PageController controller = PageController(
-    initialPage: 1,
+    initialPage: int.parse(dotenv.env["DEBUG"] ?? "0") == 1 ? 2 : 1,
   );
 
   String currentLanguage = "";
@@ -66,24 +69,27 @@ class _LedgerListPageState extends State<LedgerListPage> {
       body: PageView(
         physics: const BouncingScrollPhysics(),
         controller: controller,
-        children: [
-          const AllLedgerSettings(),
-          LedgerList(
-            header: getText("allledger"),
-            subheader: subheader,
-            emptyPrompt: getText("empty"),
-          ),
-        ],
+        children: (debugMode ? <Widget>[const DebugSubpage()] : <Widget>[]) +
+            [
+              const AllLedgerSettings(),
+              LedgerList(
+                header: getText("allledger"),
+                subheader: subheader,
+                emptyPrompt: getText("empty"),
+              ),
+            ],
       ),
       appbarOverlay: AppbarContainer(
         rightPanel: AppbarMultipagePanel(
           pageController: controller,
           mainButtonIcon: CarbonIcons.add_alt,
           onMainButtonTap: () {},
-          pageIcons: const [
-            CarbonIcons.settings,
-            CarbonIcons.catalog,
-          ],
+          pageIcons:
+              (debugMode ? <IconData>[CarbonIcons.debug] : <IconData>[]) +
+                  const [
+                    CarbonIcons.settings,
+                    CarbonIcons.catalog,
+                  ],
         ),
       ),
     );

@@ -11,7 +11,8 @@
         "aboutapp":"About app",
         "viewlicenses":"View licenses",
         "githubrepo":"Github repository",
-        "restart": "Restarting Application"
+        "restart": "Restarting Application",
+        "debug": "Debug"
     },
     "zhcn":{
         "allledger":"所有账本",
@@ -25,7 +26,8 @@
         "aboutapp":"关于此应用程序",
         "viewlicenses":"查看许可证",
         "githubrepo":"Github Repo",
-        "restart": "正在重启程序"
+        "restart": "正在重启程序",
+        "debug": "调试"
     },
     "zhtw":{
         "allledger":"所有賬本",
@@ -39,7 +41,8 @@
         "aboutapp":"關於這個程式",
         "viewlicenses":"查看軟體許可",
         "githubrepo":"Github Repo",
-        "restart": "正在重啟程式"
+        "restart": "正在重啟程式",
+        "debug": "除錯"
     },
     "ve":{
         "allledger":"",
@@ -53,6 +56,7 @@
         "aboutapp":"",
         "viewlicenses":"",
         "githubrepo":"",
-        "restart": ""
+        "restart": "",
+        "debug": ""
     }
 }
