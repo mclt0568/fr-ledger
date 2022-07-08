@@ -32,7 +32,6 @@ class _HorizontalDropdownState extends State<HorizontalDropdown>
 
   @override
   void initState() {
-    dropdownOverlay = createDropdownMenuOverlay();
     widgetKey = LabeledGlobalKey(widget.control.getTruKeyString());
     overlayFadeController = AnimationController(
         vsync: this,
@@ -49,6 +48,8 @@ class _HorizontalDropdownState extends State<HorizontalDropdown>
     renderWidth = renderBox.size.width;
     renderX = offset.dx;
     renderY = offset.dy;
+    MediaQueryData query = MediaQuery.of(context);
+    dropdownOverlay = createDropdownMenuOverlay();
   }
 
   void openDropdown() {
@@ -71,31 +72,63 @@ class _HorizontalDropdownState extends State<HorizontalDropdown>
   }
 
   OverlayEntry createDropdownMenuOverlay() {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double systemTopPadding = MediaQuery.of(context).padding.top;
+
+    double calculatedY = 0;
+    double calculatedHeight = 0;
+
+    double fullHeight =
+        (renderHeight * widget.control.values.length) + renderHeight + 1;
+
+    double startOfButton = renderY;
+    double endOfButton = renderY + renderHeight;
+
+    double topAvailable = endOfButton - (pagePadding + systemTopPadding);
+    double bottomAvailable = screenHeight - (startOfButton + pagePadding);
+
+    bool alternativeRender = topAvailable > bottomAvailable;
+
+    double actualAvailable = alternativeRender ? topAvailable : bottomAvailable;
+
+    bool fullHeightAllowed = fullHeight < actualAvailable;
+
+    calculatedHeight = fullHeightAllowed ? fullHeight : actualAvailable;
+
+    if (alternativeRender) {
+      calculatedY = endOfButton - calculatedHeight;
+    } else {
+      calculatedY = renderY;
+    }
+
     return OverlayEntry(
-        builder: (context) => Stack(children: [
-              BackdropFilter(
-                filter: overlayBlurFilter,
-                child: FadeTransition(
-                  opacity: overlayFadeController,
-                  child: GestureDetector(
-                      onTap: () => closeDropdown(),
-                      child: Container(color: overlayTransparent)),
-                ),
-              ),
-              Positioned(
-                top: renderY,
-                left: renderX,
-                child: widget.control.dropdownListBuilder(
-                    renderX,
-                    renderY,
-                    renderWidth,
-                    renderHeight,
-                    widget.control,
-                    openDropdown,
-                    closeDropdown,
-                    updateDropdownData),
-              ),
-            ]));
+      builder: (context) => Stack(
+        children: [
+          BackdropFilter(
+            filter: overlayBlurFilter,
+            child: FadeTransition(
+              opacity: overlayFadeController,
+              child: GestureDetector(
+                  onTap: () => closeDropdown(),
+                  child: Container(color: overlayTransparent)),
+            ),
+          ),
+          Positioned(
+            top: calculatedY,
+            left: renderX,
+            child: widget.control.dropdownListBuilder(
+                renderX,
+                renderY,
+                renderWidth,
+                renderHeight,
+                widget.control,
+                openDropdown,
+                closeDropdown,
+                updateDropdownData),
+          ),
+        ],
+      ),
+    );
   }
 
   @override
