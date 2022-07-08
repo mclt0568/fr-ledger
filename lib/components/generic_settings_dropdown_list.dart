@@ -122,6 +122,7 @@ class GenericSettingsDropdownListItemSelect extends StatelessWidget {
                 for (String key in control.values.keys)
                   GestureDetector(
                     onTap: () {
+                      control.selected = key;
                       bool toClose = onSelect?.call(key) ?? true;
                       if (toClose) {
                         close();
