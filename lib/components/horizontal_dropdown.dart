@@ -48,7 +48,6 @@ class _HorizontalDropdownState extends State<HorizontalDropdown>
     renderWidth = renderBox.size.width;
     renderX = offset.dx;
     renderY = offset.dy;
-    MediaQueryData query = MediaQuery.of(context);
     dropdownOverlay = createDropdownMenuOverlay();
   }
 
