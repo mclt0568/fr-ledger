@@ -30,6 +30,7 @@ const Color secondaryAccentBackground = Color(0xFFE8C960);
 const Color white = Color(0xFFFFFFFF);
 
 const Color accentFocus = Color(0xFFE2FFFA);
+const Color backgroundFocus = Color.fromARGB(255, 244, 244, 244);
 
 const Color disabledBackground = Color(0xFFECECEC);
 const Color disabledForeground = Color(0xFF898989);

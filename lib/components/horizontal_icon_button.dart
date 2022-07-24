@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:frledger/components/default_text.dart';
 import 'package:frledger/globals/styles.dart';
 
-class HorizontalIconButton extends StatelessWidget {
+class HorizontalIconButton extends StatefulWidget {
   const HorizontalIconButton(
       {Key? key,
       required this.icon,
@@ -17,27 +17,61 @@ class HorizontalIconButton extends StatelessWidget {
   final VoidCallback? onTap;
 
   @override
+  State<HorizontalIconButton> createState() => _HorizontalIconButtonState();
+}
+
+class _HorizontalIconButtonState extends State<HorizontalIconButton> {
+  bool isHover = false;
+
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: widget.onTap,
+      onLongPressDown: (d) {
+        setState(() {
+          isHover = true;
+        });
+      },
+      onLongPressUp: () {
+        setState(() {
+          isHover = false;
+        });
+      },
+      onLongPressCancel: () {
+        setState(() {
+          isHover = false;
+        });
+      },
+      onLongPressEnd: (d) {
+        setState(() {
+          isHover = false;
+        });
+      },
+      onLongPressMoveUpdate: (d) {
+        setState(() {
+          isHover = false;
+        });
+      },
       child: Container(
         height: settingsButtonHeight,
-        decoration:
-            const BoxDecoration(color: white, boxShadow: [slightElevated]),
+        decoration: BoxDecoration(
+            color: isHover ? backgroundFocus : white,
+            boxShadow: const [slightElevated]),
         child: Row(
           children: [
             SizedBox(
               height: settingsButtonHeight,
               width: settingsButtonHeight,
-              child: Icon(icon,
+              child: Icon(widget.icon,
                   size: standardIconSize, color: paragraphColorLight),
             ),
             Expanded(
-                child: DefaultText(text: text, color: paragraphColorLight)),
+                child:
+                    DefaultText(text: widget.text, color: paragraphColorLight)),
             SizedBox(
               height: settingsButtonHeight,
               width: settingsButtonHeight,
-              child: Icon(rightIcon,
+              child: Icon(widget.rightIcon,
                   size: standardIconSize, color: paragraphColorLight),
             ),
           ],
