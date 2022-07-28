@@ -12,7 +12,6 @@ class HorizontalDropdown extends StatefulWidget {
   final IconData icon;
   final String text;
   final DropdownCotrol control;
-  final int animationMilliseconds = 150;
 
   @override
   State<HorizontalDropdown> createState() => _HorizontalDropdownState();
@@ -33,9 +32,8 @@ class _HorizontalDropdownState extends State<HorizontalDropdown>
   @override
   void initState() {
     widgetKey = LabeledGlobalKey(widget.control.getTruKeyString());
-    overlayFadeController = AnimationController(
-        vsync: this,
-        duration: Duration(milliseconds: widget.animationMilliseconds));
+    overlayFadeController =
+        AnimationController(vsync: this, duration: globalAnimationDuration);
     overlayFadeAnimation.animate(overlayFadeController);
     super.initState();
   }
@@ -62,7 +60,7 @@ class _HorizontalDropdownState extends State<HorizontalDropdown>
 
   void closeDropdown() {
     overlayFadeController.reverse();
-    Future.delayed(Duration(milliseconds: widget.animationMilliseconds), () {
+    Future.delayed(globalAnimationDuration, () {
       setState(() {
         showingDropdownList = false;
         dropdownOverlay.remove();

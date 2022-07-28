@@ -75,3 +75,8 @@ const double dropdownListMinimumHeight = 200;
 const double headerFontSize = 20;
 const double subheaderFontSize = 14;
 const double defaultParagraphFontSize = 14;
+
+
+// Time and Duration
+
+const Duration globalAnimationDuration = Duration(milliseconds: 150);
