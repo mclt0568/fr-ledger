@@ -25,40 +25,44 @@ class LedgerList extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Padding(
-              padding: const EdgeInsets.symmetric(vertical: headerPadding),
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    DefaultText(
-                        text: header, size: headerFontSize, color: headerColor),
-                    DefaultText(
-                        text: subheader,
-                        size: subheaderFontSize,
-                        color: paragraphColorDark),
-                  ])),
+            padding: const EdgeInsets.symmetric(vertical: headerPadding),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                DefaultText(
+                    text: header, size: headerFontSize, color: headerColor),
+                DefaultText(
+                    text: subheader,
+                    size: subheaderFontSize,
+                    color: paragraphColorDark),
+              ],
+            ),
+          ),
           Expanded(
             child: SingleChildScrollView(
-                physics: const BouncingScrollPhysics(),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    for (int i = 0; i < 2; i++)
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            bottom: ledgerEntryCardMarginBottom),
-                        child: LedgerEntryCard(
-                          expPercent: 0.5,
-                          planPercent: 0.1,
-                          label: "Test $i",
-                          ledgerID: "1",
-                        ),
+              physics: const BouncingScrollPhysics(),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  for (int i = 0; i < 2; i++)
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        bottom: ledgerEntryCardMarginBottom,
                       ),
-                    const SizedBox(
-                      height: ledgerEntryCardMarginBottom + appbarHeight,
-                      width: 1,
-                    )
-                  ],
-                )),
+                      child: LedgerEntryCard(
+                        expPercent: 0.5,
+                        planPercent: 0.1,
+                        label: "Test $i",
+                        ledgerID: "1",
+                      ),
+                    ),
+                  const SizedBox(
+                    height: ledgerEntryCardMarginBottom + appbarHeight,
+                    width: 1,
+                  )
+                ],
+              ),
+            ),
           )
         ],
       ),
