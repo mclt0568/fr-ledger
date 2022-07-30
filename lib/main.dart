@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:frledger/pages/ledger_list_page.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:frledger/pages/ledger_page.dart';
 
 Future<void> main() async {
   await dotenv.load(fileName: "assets/config.env");
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
         initialRoute: "/",
         routes: {
           "/": (context) => const LedgerListPage(),
+          "/ledger": (context) => const LedgerPage(),
         });
   }
 }
