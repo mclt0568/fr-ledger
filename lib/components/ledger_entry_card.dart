@@ -33,52 +33,56 @@ class _LedgerEntryCardState extends State<LedgerEntryCard> {
         (ledgerEntryCardPadding * 2);
 
     return GestureDetector(
-        onTap: () {},
-        child: Container(
-            decoration: const BoxDecoration(
-              color: white,
-              boxShadow: [slightElevated],
-            ),
-            height: ledgerEntryCardHeight,
-            child: Padding(
-                padding: const EdgeInsets.all(ledgerEntryCardPadding),
-                child: Column(
+      onTap: () {
+        Navigator.pushNamed(context, "/ledger");
+      },
+      child: Container(
+        decoration: const BoxDecoration(
+          color: white,
+          boxShadow: [slightElevated],
+        ),
+        height: ledgerEntryCardHeight,
+        child: Padding(
+          padding: const EdgeInsets.all(ledgerEntryCardPadding),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Expanded(
+                child: Row(
+                  children: [
+                    SizedBox(
+                        width: innerItemHeight,
+                        height: innerItemHeight,
+                        child: const Icon(
+                          CarbonIcons.catalog,
+                          color: accent,
+                          size: standardIconSize,
+                        )),
+                    DefaultText(text: widget.label)
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: ledgerEntryCardPrograssHeight,
+                child: Row(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Expanded(
-                        child: Row(
-                      children: [
-                        SizedBox(
-                            width: innerItemHeight,
-                            height: innerItemHeight,
-                            child: const Icon(
-                              CarbonIcons.catalog,
-                              color: accent,
-                              size: standardIconSize,
-                            )),
-                        DefaultText(text: widget.label)
-                      ],
-                    )),
-                    SizedBox(
-                      height: ledgerEntryCardPrograssHeight,
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Container(
-                            color: accent,
-                            width:
-                                widget.expPercent * progressWidth, // Percentage
-                          ),
-                          Container(
-                            color: secondaryAccentBackground,
-                            width: widget.planPercent *
-                                progressWidth, // Percentage
-                          ),
-                          Expanded(child: Container(color: gray))
-                        ],
-                      ),
-                    )
+                    Container(
+                      color: accent,
+                      width: widget.expPercent * progressWidth, // Percentage
+                    ),
+                    Container(
+                      color: secondaryAccentBackground,
+                      width: widget.planPercent * progressWidth, // Percentage
+                    ),
+                    Expanded(child: Container(color: gray))
                   ],
-                ))));
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
