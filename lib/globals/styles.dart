@@ -51,6 +51,8 @@ const Color errorDisabled = Color(0xFFAA898A);
 const Color transparent = Color(0x00000000);
 const Color overlayTransparent = Color.fromARGB(100, 151, 151, 151);
 
+const Color plannedSavingOverlay = Color(0x99FFFFFF);
+
 // Dimensions
 const double appbarPadding = 20;
 const double appbarHeight = 60;
@@ -71,12 +73,20 @@ const double settingsButtonHeight = 55;
 
 const double dropdownListMinimumHeight = 200;
 
+const double infoBoxPadding = 14;
+const double infoBoxPaddingSecondary = 5;
+const double defaultPageSeperator = 40;
+
+const double defaultProgressBarHeight = 8;
+const double summaryProgressBarHeight = 20;
+
 // Font sizes
+const double largeNumberSize = 28;
 const double headerFontSize = 20;
 const double subheaderFontSize = 14;
-const double defaultParagraphFontSize = 14;
-
+const double defaultParagraphFontSize = 16;
 
 // Time and Duration
 
 const Duration globalAnimationDuration = Duration(milliseconds: 150);
+const Duration defaultProgressBarAnimation = Duration(milliseconds: 400);
