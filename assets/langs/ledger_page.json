@@ -1,0 +1,46 @@
+{
+    "en":{
+        "summary": "Ledger Summary",
+        "log": "Spending Log",
+        "settings": "Ledger Settings",
+        "monthlybalance": "Monthly Balance",
+        "totalincome": "Total monthly income",
+        "totalspending": "Total monthly spending",
+        "plannedspending": "Planned spending",
+        "plannedmonthlybalance": "Planned final balance",
+        "breakdown":"Spending Breakdown"
+    },
+    "zhcn":{
+        "summary":"账本总结",
+        "log": "收入与花费记录",
+        "settings": "账本设置",
+        "monthlybalance": "本月余额",
+        "totalincome": "本月总收入",
+        "totalspending": "本月总支出",
+        "plannedspending": "计划支出",
+        "plannedmonthlybalance": "计划月底余额",
+        "breakdown":"支出解析"
+    },
+    "zhtw":{
+        "summary":"賬本總結",
+        "log": "收入與花費記錄",
+        "settings": "賬本設定",
+        "monthlybalance": "本月餘額",
+        "totalincome": "本月總收入",
+        "totalspending": "本月總支出",
+        "plannedspending": "計劃支出",
+        "plannedmonthlybalance": "計劃月底餘額",
+        "breakdown":"支出分析"
+    },
+    "ve":{
+        "summary":"",
+        "log": "",
+        "settings": "",
+        "monthlybalance": "",
+        "totalincome": "",
+        "totalspending": "",
+        "plannedspending": "",
+        "plannedmonthlybalance": "",
+        "breakdown":""
+    }
+}
